@@ -1,0 +1,106 @@
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text .name {
+  font-weight: 600;
+}
+
+.header-text .profession {
+  font-size: 12px;
+  margin-top: -4px;
+  color: var(--text-color);
+}
+
+.menu-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 60px); /* trừ phần header */
+}
+
+.menu-bar .mode {
+  background: var(--primary-light);
+  border-radius: 10px;
+  position: relative;
+  padding: 8px 0;
+}
+
+.sun-moon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.sun,
+.moon {
+  position: absolute;
+  transition: var(--transition-fast);
+}
+
+body.dark .sun {
+  opacity: 1;
+}
+
+body.dark .moon {
+  opacity: 0;
+}
+
+body:not(.dark) .sun {
+  opacity: 0;
+}
+
+body:not(.dark) .moon {
+  opacity: 1;
+}
+
+.toggle-switch {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.switch {
+  width: 44px;
+  height: 22px;
+  background: var(--toggle-bg);
+  border-radius: 25px;
+  position: relative;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-bg);
+  border-radius: 50%;
+  transition: var(--transition-fast);
+}
+
+body.dark .switch::before {
+  left: 24px;
+}
